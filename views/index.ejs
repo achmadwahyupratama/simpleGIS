@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <title>Wahyu - BVT</title>
+</head>
+<body>
+  <div id="mapid"></div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('mapid').setView([0,116], 5)
+    L.tileLayer('https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=dgZ5Z7BV1TTZDs1JsfpR', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> | Achmad Wahyu'
+    }).addTo(map)
+    var jakartaMarker = L.marker([-6.2, 106.8]).addTo(map)
+    var huuMarker = L.marker([-8.74, 118.437]).addTo(map)
+    var lhokseumaweMarker = L.marker([5.18, 97.14]).addTo(map)
+    var jayapuraMarker = L.marker([-2.59, 140.67]).addTo(map)
+    var samarindaMarker = L.marker([-0.5, 117.12]).addTo(map)
+    var bitungMarker = L.marker([1.445, 125.197]).addTo(map)
+    jakartaMarker.bindPopup("<b>JAKARTA</b><br>DKI Jakarta")
+    huuMarker.bindPopup("<b>HU'U</b><br>Nusa Tenggara Barat")
+    lhokseumaweMarker.bindPopup("<b>LHOKSEUMAWE</b><br>N Aceh Darussalam")
+    jayapuraMarker.bindPopup("<b>JAYAPURA</b><br>Papua")
+    samarindaMarker.bindPopup("<b>SAMARINDA</b><br>Kalimantan Timur")
+    bitungMarker.bindPopup("<b>BITUNG</b><br>Sulawesi Utara")
+  </script>
+</body>
+</html>
